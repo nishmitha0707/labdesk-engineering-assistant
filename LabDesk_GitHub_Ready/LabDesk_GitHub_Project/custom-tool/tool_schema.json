@@ -1,0 +1,35 @@
+{
+  "toolName": "labdesk_ohms_calculator",
+  "description": "Calculates one missing electrical quantity using Ohm’s law or electrical power. Use when exactly two of voltage (V), current (A), and resistance (ohms) are known. Inputs use SI units. Does not control or interact with physical equipment.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "voltage": {
+        "type": "number",
+        "description": "Known voltage in volts (V). Leave blank if unknown."
+      },
+      "current": {
+        "type": "number",
+        "description": "Known current in amperes (A). Leave blank if unknown."
+      },
+      "resistance": {
+        "type": "number",
+        "description": "Known resistance in ohms (Ω). Leave blank if unknown."
+      },
+      "target": {
+        "type": "string",
+        "description": "Quantity to calculate: V, I, R, or P.",
+        "enum": [
+          "V",
+          "I",
+          "R",
+          "P"
+        ]
+      }
+    },
+    "required": [
+      "target"
+    ]
+  },
+  "javascriptFile": "LabDesk_Custom_Tool.js"
+}
